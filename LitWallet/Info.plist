@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.214877071991-5ce6j35ks55domts7vnstv9cou0s37qc</string>
+			</array>
+		</dict>
+	</array>
+	<key>GIDClientID</key>
+	<string>214877071991-5ce6j35ks55domts7vnstv9cou0s37qc.apps.googleusercontent.com</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>RELAY_SERVER</key>
+	<string>https://lit-relay-server.api.3wlabs.xyz:3001/</string>
+</dict>
+</plist>

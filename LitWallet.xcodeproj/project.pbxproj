@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		59135680D94F5DBC3B7DE543 /* Pods_LitWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 328AE6AD95EDD384DBA1F384 /* Pods_LitWallet.framework */; };
+		BA7EE7A429929ED200D73069 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EE7A329929ED200D73069 /* AppDelegate.swift */; };
+		BA7EE7AB29929ED200D73069 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7EE7A929929ED200D73069 /* Main.storyboard */; };
+		BA7EE7AD29929ED400D73069 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA7EE7AC29929ED400D73069 /* Assets.xcassets */; };
+		BA7EE7B029929ED400D73069 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7EE7AE29929ED400D73069 /* LaunchScreen.storyboard */; };
+		BA7EE7C62992AACB00D73069 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EE7B72992AACA00D73069 /* SplashViewController.swift */; };
+		BA7EE7C72992AACB00D73069 /* MintingPKPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EE7B82992AACA00D73069 /* MintingPKPViewController.swift */; };
+		BA7EE7C82992AACB00D73069 /* WalleteSendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA7EE7B92992AACA00D73069 /* WalleteSendViewController.xib */; };
+		BA7EE7C92992AACB00D73069 /* WalletAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EE7BA2992AACA00D73069 /* WalletAddressViewController.swift */; };
+		BA7EE7CA2992AACB00D73069 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EE7BB2992AACA00D73069 /* SignInViewController.swift */; };
+		BA7EE7CB2992AACB00D73069 /* WalleteSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EE7BC2992AACA00D73069 /* WalleteSendViewController.swift */; };
+		BA7EE7CC2992AACB00D73069 /* SendLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EE7BD2992AACB00D73069 /* SendLoadingView.swift */; };
+		BA7EE7CD2992AACB00D73069 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EE7BE2992AACB00D73069 /* Error.swift */; };
+		BA7EE7CE2992AACB00D73069 /* ValueSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EE7BF2992AACB00D73069 /* ValueSendView.swift */; };
+		BA7EE7CF2992AACB00D73069 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EE7C02992AACB00D73069 /* Constants.swift */; };
+		BA7EE7D02992AACB00D73069 /* WalletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EE7C12992AACB00D73069 /* WalletManager.swift */; };
+		BA7EE7D12992AACB00D73069 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EE7C22992AACB00D73069 /* Extensions.swift */; };
+		BA7EE7D22992AACB00D73069 /* logo_gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = BA7EE7C32992AACB00D73069 /* logo_gif.gif */; };
+		BA7EE7D32992AACB00D73069 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EE7C42992AACB00D73069 /* WalletViewController.swift */; };
+		BA7EE7D42992AACB00D73069 /* WalletAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA7EE7C52992AACB00D73069 /* WalletAddressViewController.xib */; };
+		BA7EE7D62992AB6600D73069 /* LitOAuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EE7D52992AB6600D73069 /* LitOAuthClient.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		00C8C32B16CA777DB53F1959 /* Pods-LitWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LitWallet.release.xcconfig"; path = "Target Support Files/Pods-LitWallet/Pods-LitWallet.release.xcconfig"; sourceTree = "<group>"; };
+		328AE6AD95EDD384DBA1F384 /* Pods_LitWallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LitWallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		490CBD1E2E579A2A8225EC54 /* Pods-LitWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LitWallet.debug.xcconfig"; path = "Target Support Files/Pods-LitWallet/Pods-LitWallet.debug.xcconfig"; sourceTree = "<group>"; };
+		BA7EE7A029929ED200D73069 /* LitWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LitWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA7EE7A329929ED200D73069 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BA7EE7AA29929ED200D73069 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BA7EE7AC29929ED400D73069 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BA7EE7AF29929ED400D73069 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BA7EE7B129929ED400D73069 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA7EE7B72992AACA00D73069 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		BA7EE7B82992AACA00D73069 /* MintingPKPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MintingPKPViewController.swift; sourceTree = "<group>"; };
+		BA7EE7B92992AACA00D73069 /* WalleteSendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalleteSendViewController.xib; sourceTree = "<group>"; };
+		BA7EE7BA2992AACA00D73069 /* WalletAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletAddressViewController.swift; sourceTree = "<group>"; };
+		BA7EE7BB2992AACA00D73069 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		BA7EE7BC2992AACA00D73069 /* WalleteSendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalleteSendViewController.swift; sourceTree = "<group>"; };
+		BA7EE7BD2992AACB00D73069 /* SendLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendLoadingView.swift; sourceTree = "<group>"; };
+		BA7EE7BE2992AACB00D73069 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		BA7EE7BF2992AACB00D73069 /* ValueSendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueSendView.swift; sourceTree = "<group>"; };
+		BA7EE7C02992AACB00D73069 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BA7EE7C12992AACB00D73069 /* WalletManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletManager.swift; sourceTree = "<group>"; };
+		BA7EE7C22992AACB00D73069 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BA7EE7C32992AACB00D73069 /* logo_gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logo_gif.gif; sourceTree = "<group>"; };
+		BA7EE7C42992AACB00D73069 /* WalletViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		BA7EE7C52992AACB00D73069 /* WalletAddressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalletAddressViewController.xib; sourceTree = "<group>"; };
+		BA7EE7D52992AB6600D73069 /* LitOAuthClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LitOAuthClient.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BA7EE79D29929ED200D73069 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59135680D94F5DBC3B7DE543 /* Pods_LitWallet.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		743D9C44851137FA1861C0C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				490CBD1E2E579A2A8225EC54 /* Pods-LitWallet.debug.xcconfig */,
+				00C8C32B16CA777DB53F1959 /* Pods-LitWallet.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BA7EE79729929ED200D73069 = {
+			isa = PBXGroup;
+			children = (
+				BA7EE7A229929ED200D73069 /* LitWallet */,
+				BA7EE7A129929ED200D73069 /* Products */,
+				743D9C44851137FA1861C0C5 /* Pods */,
+				ECE2DD1B2622B360BD192B7B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BA7EE7A129929ED200D73069 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BA7EE7A029929ED200D73069 /* LitWallet.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA7EE7A229929ED200D73069 /* LitWallet */ = {
+			isa = PBXGroup;
+			children = (
+				BA7EE7C02992AACB00D73069 /* Constants.swift */,
+				BA7EE7BE2992AACB00D73069 /* Error.swift */,
+				BA7EE7C22992AACB00D73069 /* Extensions.swift */,
+				BA7EE7C32992AACB00D73069 /* logo_gif.gif */,
+				BA7EE7B82992AACA00D73069 /* MintingPKPViewController.swift */,
+				BA7EE7BD2992AACB00D73069 /* SendLoadingView.swift */,
+				BA7EE7D52992AB6600D73069 /* LitOAuthClient.swift */,
+				BA7EE7BB2992AACA00D73069 /* SignInViewController.swift */,
+				BA7EE7B72992AACA00D73069 /* SplashViewController.swift */,
+				BA7EE7BF2992AACB00D73069 /* ValueSendView.swift */,
+				BA7EE7BA2992AACA00D73069 /* WalletAddressViewController.swift */,
+				BA7EE7C52992AACB00D73069 /* WalletAddressViewController.xib */,
+				BA7EE7BC2992AACA00D73069 /* WalleteSendViewController.swift */,
+				BA7EE7B92992AACA00D73069 /* WalleteSendViewController.xib */,
+				BA7EE7C12992AACB00D73069 /* WalletManager.swift */,
+				BA7EE7C42992AACB00D73069 /* WalletViewController.swift */,
+				BA7EE7A329929ED200D73069 /* AppDelegate.swift */,
+				BA7EE7A929929ED200D73069 /* Main.storyboard */,
+				BA7EE7AC29929ED400D73069 /* Assets.xcassets */,
+				BA7EE7AE29929ED400D73069 /* LaunchScreen.storyboard */,
+				BA7EE7B129929ED400D73069 /* Info.plist */,
+			);
+			path = LitWallet;
+			sourceTree = "<group>";
+		};
+		ECE2DD1B2622B360BD192B7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				328AE6AD95EDD384DBA1F384 /* Pods_LitWallet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BA7EE79F29929ED200D73069 /* LitWallet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA7EE7B429929ED400D73069 /* Build configuration list for PBXNativeTarget "LitWallet" */;
+			buildPhases = (
+				D29FFD301153A4454CCA2742 /* [CP] Check Pods Manifest.lock */,
+				BA7EE79C29929ED200D73069 /* Sources */,
+				BA7EE79D29929ED200D73069 /* Frameworks */,
+				BA7EE79E29929ED200D73069 /* Resources */,
+				086BD3756D05A41AF8DB2B12 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LitWallet;
+			productName = LitWallet;
+			productReference = BA7EE7A029929ED200D73069 /* LitWallet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BA7EE79829929ED200D73069 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					BA7EE79F29929ED200D73069 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = BA7EE79B29929ED200D73069 /* Build configuration list for PBXProject "LitWallet" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BA7EE79729929ED200D73069;
+			productRefGroup = BA7EE7A129929ED200D73069 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA7EE79F29929ED200D73069 /* LitWallet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BA7EE79E29929ED200D73069 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA7EE7B029929ED400D73069 /* LaunchScreen.storyboard in Resources */,
+				BA7EE7C82992AACB00D73069 /* WalleteSendViewController.xib in Resources */,
+				BA7EE7D42992AACB00D73069 /* WalletAddressViewController.xib in Resources */,
+				BA7EE7AD29929ED400D73069 /* Assets.xcassets in Resources */,
+				BA7EE7AB29929ED200D73069 /* Main.storyboard in Resources */,
+				BA7EE7D22992AACB00D73069 /* logo_gif.gif in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		086BD3756D05A41AF8DB2B12 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LitWallet/Pods-LitWallet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LitWallet/Pods-LitWallet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LitWallet/Pods-LitWallet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D29FFD301153A4454CCA2742 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LitWallet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BA7EE79C29929ED200D73069 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA7EE7CD2992AACB00D73069 /* Error.swift in Sources */,
+				BA7EE7C72992AACB00D73069 /* MintingPKPViewController.swift in Sources */,
+				BA7EE7A429929ED200D73069 /* AppDelegate.swift in Sources */,
+				BA7EE7CE2992AACB00D73069 /* ValueSendView.swift in Sources */,
+				BA7EE7D32992AACB00D73069 /* WalletViewController.swift in Sources */,
+				BA7EE7D02992AACB00D73069 /* WalletManager.swift in Sources */,
+				BA7EE7C92992AACB00D73069 /* WalletAddressViewController.swift in Sources */,
+				BA7EE7CF2992AACB00D73069 /* Constants.swift in Sources */,
+				BA7EE7D12992AACB00D73069 /* Extensions.swift in Sources */,
+				BA7EE7CB2992AACB00D73069 /* WalleteSendViewController.swift in Sources */,
+				BA7EE7CA2992AACB00D73069 /* SignInViewController.swift in Sources */,
+				BA7EE7C62992AACB00D73069 /* SplashViewController.swift in Sources */,
+				BA7EE7D62992AB6600D73069 /* LitOAuthClient.swift in Sources */,
+				BA7EE7CC2992AACB00D73069 /* SendLoadingView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BA7EE7A929929ED200D73069 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA7EE7AA29929ED200D73069 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BA7EE7AE29929ED400D73069 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA7EE7AF29929ED400D73069 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BA7EE7B229929ED400D73069 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BA7EE7B329929ED400D73069 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BA7EE7B529929ED400D73069 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 490CBD1E2E579A2A8225EC54 /* Pods-LitWallet.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 296FCFG93V;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LitWallet/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.j-labs.lit.AuthPKPExample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BA7EE7B629929ED400D73069 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00C8C32B16CA777DB53F1959 /* Pods-LitWallet.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 296FCFG93V;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LitWallet/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.j-labs.lit.AuthPKPExample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BA7EE79B29929ED200D73069 /* Build configuration list for PBXProject "LitWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA7EE7B229929ED400D73069 /* Debug */,
+				BA7EE7B329929ED400D73069 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA7EE7B429929ED400D73069 /* Build configuration list for PBXNativeTarget "LitWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA7EE7B529929ED400D73069 /* Debug */,
+				BA7EE7B629929ED400D73069 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BA7EE79829929ED200D73069 /* Project object */;
+}

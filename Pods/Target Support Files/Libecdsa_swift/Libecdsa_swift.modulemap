@@ -1,0 +1,10 @@
+
+framework module Libecdsa_swift {
+    umbrella header "Libecdsa_swift.h"
+
+    explicit module libecdsa {
+        private header "libecdsa.h"
+    }
+
+    export *
+}

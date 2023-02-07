@@ -1,0 +1,38 @@
+{
+  "name": "Lit_swift",
+  "version": "0.0.1",
+  "summary": "swift implementation for lit js sdk.",
+  "homepage": "https://github.com/j-labs-xyz/lit-swift-sdk",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "leven": "leven@j-labs.xyz"
+  },
+  "platforms": {
+    "ios": "13.0"
+  },
+  "swift_versions": "5.5",
+  "module_name": "litSwift",
+  "source": {
+    "git": "https://github.com/j-labs-xyz/lit-swift-sdk",
+    "tag": "0.0.1"
+  },
+  "source_files": "Lit_swift/**/*{h,swift}",
+  "dependencies": {
+    "PromiseKit": [
+
+    ],
+    "TweetNacl": [
+
+    ],
+    "Libecdsa_swift": [
+
+    ],
+    "web3-jlabs.swift": [
+      "~>1.4.2"
+    ]
+  },
+  "swift_version": "5.5"
+}

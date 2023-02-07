@@ -1,0 +1,6 @@
+framework module litSwift {
+  umbrella header "Lit_swift-umbrella.h"
+
+  export *
+  module * { export * }
+}
