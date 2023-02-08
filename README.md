@@ -13,3 +13,6 @@ pod install
 ```
 
 3. open LitWallet.xcworkspace
+
+
+Simulator is temporarily not supported 
