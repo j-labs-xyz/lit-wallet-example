@@ -97,7 +97,7 @@ class SignInViewController: UIViewController {
 
     @objc
     func gotoSignin() {
-        self.infoLabel.text = "Signing in with Google Auth..."
+        self.infoLabel.text = "Signing in with Google OAuth..."
         self.siginButton.isHidden = true
         GIDSignIn.sharedInstance.signIn(withPresenting: self) { [weak self] res, err in
             guard let `self` = self else { return }
@@ -140,20 +140,33 @@ class SignInViewController: UIViewController {
     func getSignature() {
         let authNeededCallback: AuthNeededCallback = { [weak self]chain, resources, switchChain, expiration, url in
             guard let self = self else { return Promise(error: LitError.COMMON) }
-            let props = SignSessionKeyProp(sessionKey: url, authMethods: [AuthMethod(authMethodType: 6, accessToken: self.tokenString)], pkpPublicKey: self.wallet.publicKey, expiration: expiration, resouces: resources ?? [], chain: chain)
+            let props = SignSessionKeyProp(
+                sessionKey: url,
+                authMethods: [AuthMethod(authMethodType: 6, accessToken: self.tokenString)],
+                pkpPublicKey: self.wallet.publicKey,
+                expiration: expiration,
+                resouces: resources ?? [],
+                chain: chain)
             return self.litClient.signSessionKey(props)
         }
-//        https://developer.litprotocol.com/SDK/Explanation/WalletSigs/sessionSigs
+        //https://developer.litprotocol.com/SDK/Explanation/WalletSigs/sessionSigs
         let props = GetSessionSigsProps(expiration: Date(timeIntervalSinceNow: 1000 * 60 * 60 * 24),
                                         chain: .mumbai,
-                                        resource: ["litEncryptionCondition://*", "litSigningCondition://*", "litPKP://*", "litRLI://*", "litAction://*"],
+                                        resource: [
+                                            "litEncryptionCondition://*",
+                                            "litSigningCondition://*",
+                                            "litPKP://*",
+                                            "litRLI://*",
+                                            "litAction://*"
+                                        ],
                                         switchChain: false,
                                         authNeededCallback: authNeededCallback)
         self.infoLabel.text = """
         pkpPublicKey: \(self.wallet.publicKey)
+        
         pkpEthAddress: \(self.wallet.address)
         
-        Get Signature....
+        Getting Signature...
         """
         
         if self.litClient.isReady == false {
@@ -201,9 +214,10 @@ class SignInViewController: UIViewController {
         self.wallet.address = pkpEthAddress
         self.infoLabel.text = """
         pkpPublicKey: \(pkpPublicKey)
+        
         pkpEthAddress: \(pkpEthAddress)
         
-        Get Signature....
+        Getting Signature...
         """
         self.getSignature()
 

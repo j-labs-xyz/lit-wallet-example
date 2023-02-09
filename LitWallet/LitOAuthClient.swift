@@ -6,9 +6,12 @@
 //
 
 import Foundation
+import Alamofire
+
 import litSwift
 
-import Alamofire
+let relayServerErrorMsg = "Something wrong with the Lit Relay Server API call";
+
 public class LitOAuthClient {
     
     let relayApi: String
@@ -24,7 +27,6 @@ public class LitOAuthClient {
         self.session = Session(configuration: configuration, serverTrustManager: manager)
     }
     
-    
     public func handleLoggedInToGoogle(_ credential: String,
                                               completionHandler: @escaping (_ requestId: String?, _ error: String?) -> Void) {
     
@@ -35,16 +37,16 @@ public class LitOAuthClient {
             if let data = response.data, let dataDict = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
                 let code = response.response?.statusCode ?? 400
                 if code < 200 || code >= 400 {
-                    let error = dataDict["error"] as? String ?? "Something wrong with the API call"
+                    let error = dataDict["error"] as? String ?? relayServerErrorMsg
                     completionHandler(nil, error)
                 } else if let requestId = dataDict["requestId"] as? String {
                     completionHandler(requestId, nil)
                 } else {
-                    let error = "Empty requestId"
+                    let error = "Empty request id"
                     completionHandler(nil,error)
                 }
             } else {
-                completionHandler(nil, "Something wrong with the API call")
+                completionHandler(nil, relayServerErrorMsg)
             }
         }
     }
@@ -57,7 +59,7 @@ public class LitOAuthClient {
                 
                 let code = response.response?.statusCode ?? 400
                 if code < 200 || code >= 400 {
-                    let error = dataDict["error"] as? String ?? "Something wrong with the API call"
+                    let error = dataDict["error"] as? String ?? relayServerErrorMsg
                     completionHandler(nil, error)
                 } else if let status = dataDict["status"] as? String, status == "Succeeded" {
                     completionHandler(dataDict, nil)
@@ -68,7 +70,7 @@ public class LitOAuthClient {
                     }
                 }
             } else {
-                completionHandler(nil, "Something wrong with the API call")
+                completionHandler(nil, relayServerErrorMsg)
             }
         }
     }

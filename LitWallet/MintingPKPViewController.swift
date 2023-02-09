@@ -64,7 +64,7 @@ class MintingPKPViewController: UIViewController {
         }
         
         mintingInfoLabel.numberOfLines = 0
-        mintingInfoLabel.text = "Minting PKP..."
+        mintingInfoLabel.text = "Minting Lit PKP..."
         mintingInfoLabel.textColor = .white
         mintingInfoLabel.textAlignment = .center
         mintingInfoLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
@@ -106,7 +106,7 @@ class MintingPKPViewController: UIViewController {
         
         self.showOrHideCloseButton(show: false)
         
-        self.mintingInfoLabel.text = "Minting a new Lit PKP..."
+        self.mintingInfoLabel.text = "Logged in to Google successfully..."
         
         OAuthClient.handleLoggedInToGoogle(tokenString) { [weak self] requestId, error in
             guard let `self` = self else { return }
@@ -121,7 +121,7 @@ class MintingPKPViewController: UIViewController {
     
     func requestPKP(with requestId: String) {
         
-        self.mintingInfoLabel.text = "Minting a new Lit PKP with request id: \(requestId)"
+        self.mintingInfoLabel.text = "Minting a new Lit PKP with the request id: \(requestId)"
 
         OAuthClient.pollRequestUntilTerminalState(with: requestId) { [weak self] result, error in
             guard let `self` = self else { return }
