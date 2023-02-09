@@ -139,21 +139,15 @@ class SignInViewController: UIViewController {
 
     func getSignature() {
         let authNeededCallback: AuthNeededCallback = { [weak self]chain, resources, switchChain, expiration, url in
-<<<<<<< HEAD
-            guard let self = self else { return Promise(error: LitError.COMMON) }
-            let props = SignSessionKeyProp(
-                sessionKey: url,
-                authMethods: [AuthMethod(authMethodType: 6, accessToken: self.tokenString)],
-                pkpPublicKey: self.wallet.publicKey,
-                expiration: expiration,
-                resouces: resources ?? [],
-                chain: chain)
-=======
             guard let self = self else {
                 return Promise(error: LitError.clientDeinit)
             }
-            let props = SignSessionKeyProp(sessionKey: url, authMethods: [AuthMethod(authMethodType: 6, accessToken: self.tokenString)], pkpPublicKey: self.wallet.publicKey, expiration: expiration, resouces: resources ?? [], chain: chain)
->>>>>>> f79fb82 (- lit update)
+            let props = SignSessionKeyProp(sessionKey: url,
+                                           authMethods: [AuthMethod(authMethodType: 6, accessToken: self.tokenString)],
+                                           pkpPublicKey: self.wallet.publicKey,
+                                           expiration: expiration,
+                                           resouces: resources ?? [],
+                                           chain: chain)
             return self.litClient.signSessionKey(props)
         }
         //https://developer.litprotocol.com/SDK/Explanation/WalletSigs/sessionSigs

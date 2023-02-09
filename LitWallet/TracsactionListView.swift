@@ -128,7 +128,7 @@ class TransactionListView: UIView, UITableViewDelegate, UITableViewDataSource {
             guard let self = self else { return }
             self.didClickTxn?(transaction.hash)
         }
-        
+        cell.selectionStyle = .none
         cell.didClickAddress = { [weak self] in
             guard let self = self else { return }
             self.didClickAddress?(self.address == transaction.from ? transaction.to : transaction.from)
