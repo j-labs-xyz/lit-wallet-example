@@ -136,6 +136,8 @@ class SignInViewController: UIViewController {
     var litClient: LitClient {
         return WalletManager.shared.litClient
     }
+    
+    var retryCount: Int = 0
 
     func getSignature() {
         let authNeededCallback: AuthNeededCallback = { [weak self]chain, resources, switchChain, expiration, url in
@@ -199,12 +201,21 @@ class SignInViewController: UIViewController {
     """
             }.catch {  [weak self]err in
                 guard let self = self else { return }
-                UIWindow.toast(msg: err.localizedDescription)
-                self.siginButton.isHidden = false
+                if self.retryCount <= 1 {
+                    self.retryCount += 1
+                    let _ = self.litClient.connect().done { _ in
+                        self.getSignature()
+                    }.catch { _ in
+                        UIWindow.toast(msg: err.localizedDescription)
+                        self.siginButton.isHidden = false
+                    }
+                    
+                } else {
+                    UIWindow.toast(msg: err.localizedDescription)
+                    self.siginButton.isHidden = false
+                }
             }
         }
-        
-      
     }
     
     func didMintPKP(pkpEthAddress: String, pkpPublicKey: String, profile: GIDProfileData) {
@@ -217,6 +228,7 @@ class SignInViewController: UIViewController {
         
         Getting Signature...
         """
+        self.retryCount = 0
         self.getSignature()
 
 
