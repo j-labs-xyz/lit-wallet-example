@@ -94,7 +94,7 @@ class SignInViewController: UIViewController {
     
     var tokenString: String = ""
     var wallet: WalletModel = WalletModel()
-
+    
     @objc
     func gotoSignin() {
         self.infoLabel.text = "Signing in with Google OAuth..."
@@ -139,6 +139,7 @@ class SignInViewController: UIViewController {
 
     func getSignature() {
         let authNeededCallback: AuthNeededCallback = { [weak self]chain, resources, switchChain, expiration, url in
+<<<<<<< HEAD
             guard let self = self else { return Promise(error: LitError.COMMON) }
             let props = SignSessionKeyProp(
                 sessionKey: url,
@@ -147,6 +148,12 @@ class SignInViewController: UIViewController {
                 expiration: expiration,
                 resouces: resources ?? [],
                 chain: chain)
+=======
+            guard let self = self else {
+                return Promise(error: LitError.clientDeinit)
+            }
+            let props = SignSessionKeyProp(sessionKey: url, authMethods: [AuthMethod(authMethodType: 6, accessToken: self.tokenString)], pkpPublicKey: self.wallet.publicKey, expiration: expiration, resouces: resources ?? [], chain: chain)
+>>>>>>> f79fb82 (- lit update)
             return self.litClient.signSessionKey(props)
         }
         //https://developer.litprotocol.com/SDK/Explanation/WalletSigs/sessionSigs
@@ -174,10 +181,7 @@ class SignInViewController: UIViewController {
                 return self.litClient.getSessionSigs(props)
             }.done { [weak self] res in
                 guard let self = self else { return }
-                
-                if let sessionSigs = res as? [String: Any] {
-                    self.wallet.sessionSigs = sessionSigs
-                }
+                self.wallet.sessionSigs = res
                 self.gotoWallet()
                 self.infoLabel.text =  """
     pkpPublicKey: \(self.wallet.publicKey)
@@ -186,14 +190,13 @@ class SignInViewController: UIViewController {
     """
             }.catch { [weak self]err in
                 guard let self = self else { return }
+                UIWindow.toast(msg: err.localizedDescription)
                 self.siginButton.isHidden = false
             }
         } else {
             let _ = self.litClient.getSessionSigs(props).done { [weak self] res in
                 guard let self = self else { return }
-                if let sessionSigs = res as? [String: Any] {
-                    self.wallet.sessionSigs = sessionSigs
-                }
+                self.wallet.sessionSigs = res
                 self.gotoWallet()
                 self.infoLabel.text =  """
     pkpPublicKey: \(self.wallet.publicKey)
@@ -202,6 +205,7 @@ class SignInViewController: UIViewController {
     """
             }.catch {  [weak self]err in
                 guard let self = self else { return }
+                UIWindow.toast(msg: err.localizedDescription)
                 self.siginButton.isHidden = false
             }
         }

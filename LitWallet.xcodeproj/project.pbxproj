@@ -28,6 +28,9 @@
 		BA7EE7D32992AACB00D73069 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EE7C42992AACB00D73069 /* WalletViewController.swift */; };
 		BA7EE7D42992AACB00D73069 /* WalletAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA7EE7C52992AACB00D73069 /* WalletAddressViewController.xib */; };
 		BA7EE7D62992AB6600D73069 /* LitOAuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EE7D52992AB6600D73069 /* LitOAuthClient.swift */; };
+		BA81933929950BEE0095EF1D /* TracsactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA81933829950BEE0095EF1D /* TracsactionListView.swift */; };
+		BA81933C29950D5C0095EF1D /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA81933A29950D5C0095EF1D /* TransactionTableViewCell.swift */; };
+		BA81933D29950D5C0095EF1D /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA81933B29950D5C0095EF1D /* TransactionTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		BA7EE7C42992AACB00D73069 /* WalletViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		BA7EE7C52992AACB00D73069 /* WalletAddressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalletAddressViewController.xib; sourceTree = "<group>"; };
 		BA7EE7D52992AB6600D73069 /* LitOAuthClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LitOAuthClient.swift; sourceTree = "<group>"; };
+		BA81933829950BEE0095EF1D /* TracsactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracsactionListView.swift; sourceTree = "<group>"; };
+		BA81933A29950D5C0095EF1D /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		BA81933B29950D5C0095EF1D /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,9 @@
 				BA7EE7B92992AACA00D73069 /* WalleteSendViewController.xib */,
 				BA7EE7C12992AACB00D73069 /* WalletManager.swift */,
 				BA7EE7C42992AACB00D73069 /* WalletViewController.swift */,
+				BA81933829950BEE0095EF1D /* TracsactionListView.swift */,
+				BA81933A29950D5C0095EF1D /* TransactionTableViewCell.swift */,
+				BA81933B29950D5C0095EF1D /* TransactionTableViewCell.xib */,
 				BA7EE7A329929ED200D73069 /* AppDelegate.swift */,
 				BA7EE7A929929ED200D73069 /* Main.storyboard */,
 				BA7EE7AC29929ED400D73069 /* Assets.xcassets */,
@@ -197,6 +206,7 @@
 				BA7EE7C82992AACB00D73069 /* WalleteSendViewController.xib in Resources */,
 				BA7EE7D42992AACB00D73069 /* WalletAddressViewController.xib in Resources */,
 				BA7EE7AD29929ED400D73069 /* Assets.xcassets in Resources */,
+				BA81933D29950D5C0095EF1D /* TransactionTableViewCell.xib in Resources */,
 				BA7EE7AB29929ED200D73069 /* Main.storyboard in Resources */,
 				BA7EE7D22992AACB00D73069 /* logo_gif.gif in Resources */,
 			);
@@ -253,6 +263,8 @@
 			files = (
 				BA7EE7CD2992AACB00D73069 /* Error.swift in Sources */,
 				BA7EE7C72992AACB00D73069 /* MintingPKPViewController.swift in Sources */,
+				BA81933C29950D5C0095EF1D /* TransactionTableViewCell.swift in Sources */,
+				BA81933929950BEE0095EF1D /* TracsactionListView.swift in Sources */,
 				BA7EE7A429929ED200D73069 /* AppDelegate.swift in Sources */,
 				BA7EE7CE2992AACB00D73069 /* ValueSendView.swift in Sources */,
 				BA7EE7D32992AACB00D73069 /* WalletViewController.swift in Sources */,

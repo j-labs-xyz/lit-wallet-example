@@ -14,7 +14,7 @@ import KeychainSwift
 class WalletManager {
     static let shared: WalletManager = WalletManager()
 
-    lazy var litClient: LitClient = LitClient(config: LitNodeClientConfig(bootstrapUrls: LitNetwork.serrano.networks, litNetwork: .serrano))
+    lazy var litClient: LitClient = LitClient()
 
     lazy var web3 = EthereumHttpClient(url: URL(string: LIT_CHAINS[.mumbai]?.rpcUrls.first ?? "")!)
 
@@ -67,12 +67,12 @@ extension WalletManager {
                     }
                 }
             } else {
-                resolver.reject(LitError.COMMON)
+                resolver.reject(LitError.clientDeinit)
             }
         }
     }
     func send(toAddress: String, value: String) -> Promise<String> {
-        return self.litClient.sendPKPTransaction(toAddress: toAddress, fromAddress: currentWallet!.address, value: value, data: "0x", chain: .mumbai, publicKey: currentWallet!.publicKey, gasPrice: "0x2e90edd000", gasLimit: "0x7530")
+        return self.litClient.sendPKPTransaction(toAddress: toAddress, fromAddress: currentWallet!.address, value: value, data: "0x", chain: .mumbai, auth: currentWallet!.sessionSigs, publicKey: currentWallet!.publicKey, gasPrice: "0x2e90edd000", gasLimit: "0x7530")
     }
 }
 
@@ -128,7 +128,7 @@ class WalletModel: HandyJSON {
     var balance: Double = 0
     var address: String = ""
     var publicKey: String = ""
-    var sessionSigs: [String: Any]?
+    var sessionSigs: [String: Any] = [:]
     required init() {}
 }
 

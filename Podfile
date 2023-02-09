@@ -8,7 +8,9 @@ target 'LitWallet' do
   # Pods for LitWallet
 	
 	
-  pod 'Lit_swift', :git => "git@github.com:j-labs-xyz/lit-swift-sdk.git"
+  pod 'Lit_swift', :git => "git@github.com:j-labs-xyz/lit-swift-sdk.git", :commit => "dd2ea37b34e72785c9659985aa26026d6966949e"
+#  pod 'Lit_swift', :path => "../../Modules/Lit_swift"
+
   pod 'SnapKit', '~> 5.6.0'
   pod 'GoogleSignIn', '~> 7.0.0'
   pod 'FLAnimatedImage', '~> 1.0.0'
