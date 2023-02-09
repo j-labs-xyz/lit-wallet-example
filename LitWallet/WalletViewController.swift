@@ -179,9 +179,9 @@ class WalletViewController: UIViewController {
     }
     
     @objc func logout() {
-        let alertVC = UIAlertController(title: "are you sure to log out?", message: nil, preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "cancel", style: .default))
-        alertVC.addAction(UIAlertAction(title: "sure", style: .destructive, handler: { _ in
+        let alertVC = UIAlertController(title: "Sure to log out?", message: nil, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "Cancel", style: .default))
+        alertVC.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { _ in
             WalletManager.shared.logout()
             if let window =  (UIApplication.shared.delegate as? AppDelegate)?.window {
                 window.rootViewController = SignInViewController()
