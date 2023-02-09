@@ -92,7 +92,7 @@ class MintingPKPViewController: UIViewController {
     func closeVC() {
         self.dismiss(animated: true) {[weak self] in
             guard let `self` = self else { return }
-            self.completionHandler(nil, nil, "Something error")
+            self.completionHandler(nil, nil, "Something is wrong")
         }
     }
     
@@ -106,7 +106,7 @@ class MintingPKPViewController: UIViewController {
         
         self.showOrHideCloseButton(show: false)
         
-        self.mintingInfoLabel.text = "Starting to mint Lit PKP ..."
+        self.mintingInfoLabel.text = "Minting a new Lit PKP..."
         
         OAuthClient.handleLoggedInToGoogle(tokenString) { [weak self] requestId, error in
             guard let `self` = self else { return }
@@ -121,7 +121,7 @@ class MintingPKPViewController: UIViewController {
     
     func requestPKP(with requestId: String) {
         
-        self.mintingInfoLabel.text = "Minting Lit PKP with requestId: \(requestId)"
+        self.mintingInfoLabel.text = "Minting a new Lit PKP with request id: \(requestId)"
 
         OAuthClient.pollRequestUntilTerminalState(with: requestId) { [weak self] result, error in
             guard let `self` = self else { return }

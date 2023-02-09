@@ -97,7 +97,7 @@ class SignInViewController: UIViewController {
 
     @objc
     func gotoSignin() {
-        self.infoLabel.text = "Get Google Auth..."
+        self.infoLabel.text = "Signing in with Google Auth..."
         self.siginButton.isHidden = true
         GIDSignIn.sharedInstance.signIn(withPresenting: self) { [weak self] res, err in
             guard let `self` = self else { return }
@@ -105,10 +105,11 @@ class SignInViewController: UIViewController {
                 print(tokenString)
                 self.tokenString = tokenString
                 if let wallet = WalletManager.shared.loadWallet(by: profile.email) {
+                    self.infoLabel.text = "Loading the existing Lit PKP..."
                     self.wallet = wallet
                     self.didMintPKP(pkpEthAddress: self.wallet.address, pkpPublicKey: self.wallet.publicKey, profile: profile)
                 } else {
-                    self.infoLabel.text = "Get PKP..."
+                    self.infoLabel.text = "Starting to mint a new Lit PKP..."
                     let userInfo = UserInfo()
                     userInfo.avatar = profile.imageURL(withDimension: 300)?.absoluteString
                     userInfo.name = profile.name
