@@ -33,6 +33,6 @@ class WalletAddressViewController: UIViewController {
     
     @objc func didClickFaucet() {
         let vc = SFSafariViewController(url: URL(string: "https://faucet.polygon.technology/")!)
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.present(vc, animated: true)
     }
 }

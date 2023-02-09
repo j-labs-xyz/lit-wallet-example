@@ -12,6 +12,8 @@ import GoogleSignIn
 import Kingfisher
 import litSwift
 import web3
+import SafariServices
+
 class WalletViewController: UIViewController {
 
     let wallet: WalletModel
@@ -76,7 +78,7 @@ class WalletViewController: UIViewController {
     }()
     
     lazy var sendView = ValueSendView()
-    
+    lazy var transactionListView = TransactionListView()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initUI()
@@ -138,6 +140,8 @@ class WalletViewController: UIViewController {
             make.top.equalTo(balanceTitleLabel.snp.bottom).offset(10)
             make.right.equalTo(-16)
         }
+        
+        
          
         let bottomStackView = UIStackView()
         bottomStackView.spacing = 20
@@ -153,6 +157,23 @@ class WalletViewController: UIViewController {
             make.height.equalTo(50)
         }
         
+        self.view.addSubview(self.transactionListView)
+        self.transactionListView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(self.balanceLabel.snp.bottom)
+            make.bottom.equalTo(bottomStackView.snp.top).offset(-8)
+        }
+        self.transactionListView.didClickTxn = { [weak self]txn in
+            guard let self = self else { return }
+            self.gotoPolygonScan(url: URL(string: "https://mumbai.polygonscan.com/tx/\(txn)")!)
+            
+        }
+        
+        self.transactionListView.didClickAddress = { [weak self] address in
+            guard let self = self else { return }
+            self.gotoPolygonScan(url: URL(string: "https://mumbai.polygonscan.com/address/\(address)")!)
+        }
+        
         self.view.addSubview(self.sendView)
         self.sendView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
@@ -164,12 +185,12 @@ class WalletViewController: UIViewController {
         self.receiveButton.addTarget(self, action: #selector(clickReceive), for: .touchUpInside)
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage(named: "logout")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action:  #selector(logout)), UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)]
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.retriveBalance()
+        self.transactionListView.address = WalletManager.shared.currentWallet?.address.lowercased()
     }
     
     func updateUI() {
@@ -200,6 +221,11 @@ class WalletViewController: UIViewController {
     @objc
     func clickReceive() {
         self.navigationController?.pushViewController(WalletAddressViewController(), animated: true)
+    }
+    
+    func gotoPolygonScan(url: URL) {
+        let vc = SFSafariViewController(url: url)
+        self.present(vc, animated: true)
     }
     
     func retriveBalance() {

@@ -55,7 +55,7 @@ class WalleteSendViewController: UIViewController {
         self.transactionIdLabel.addTap { [weak self] in
             guard let self = self, (self.transactionIdLabel.text?.count ?? 0) > 10 else { return }
             let vc = SFSafariViewController(url: URL(string: "https://mumbai.polygonscan.com/tx/\(self.transactionIdLabel.text ?? "")")!)
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.present(vc, animated: true)
         }
     }
     
