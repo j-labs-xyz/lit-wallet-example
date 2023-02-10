@@ -48,14 +48,10 @@ class TransactionTableViewCell: UITableViewCell {
     @objc func clickTxn() {
         didClickTxn?()
     }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         containerView.addShadow(ofColor: UIColor.black.withAlphaComponent(0.08), radius: 8, offset: CGSize(width: 10, height: 10), opacity: 1)
-    }
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        //https://api-testnet.polygonscan.com/api?module=account&action=txlistinternal&address=0xAea829daF61CD647e48A11309DEce11590A4A499&startblock=0&endblock=99999999&page=1&offset=100&sort=asc&apikey=C2NKH69QW7YI8ZYVFJBFPK9GFZDZS41YBI
     }
     
 }

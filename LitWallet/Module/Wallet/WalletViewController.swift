@@ -13,7 +13,7 @@ import Kingfisher
 import litSwift
 import web3
 import SafariServices
-
+import BigInt
 class WalletViewController: UIViewController {
 
     let wallet: WalletModel

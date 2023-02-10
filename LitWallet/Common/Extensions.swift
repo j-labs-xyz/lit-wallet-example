@@ -9,6 +9,7 @@ import Foundation
 import Toast_Swift
 import UIKit
 import JKCategories
+import BigInt
 extension UIView {
     @discardableResult
     func addTap(_ callback: @escaping () -> Void) -> UITapGestureRecognizer? {
@@ -24,9 +25,20 @@ extension UIView {
         return nil
     }
 }
+extension UInt64 {
+    var toEth: Double {
+        let ethValue = Double(self) / pow(Double(10), Double(18))
+
+        return ethValue
+    }
+}
 extension Double {
     var str_6f : String {
         return String(format: "%.6f", self)
+    }
+    var toWei: BigUInt? {
+        let weiValue: UInt64 = UInt64(self * pow(Double(10), Double(18)))
+        return BigUInt("\(weiValue)")
     }
 }
 extension UIWindow {
@@ -36,14 +48,12 @@ extension UIWindow {
     
     static func toast(msg: String, maxLength: Int = 200, placeholder: String? = "", duration: Double? = 1.3, centerY: CGFloat = UIScreen.main.bounds.size.height * 0.3) {
         
-        // 展示文字长度
         var text: String = msg.count > maxLength ? "\(msg.prefix(maxLength))" : msg
         
         if let aPlaceholder = placeholder, !aPlaceholder.isEmpty, text.isEmpty {
             text = aPlaceholder
         }
         
-        // 展示时长
         var showDuration: TimeInterval
         if let aDuration = duration {
             showDuration = TimeInterval(aDuration)
@@ -52,11 +62,9 @@ extension UIWindow {
             showDuration = max(0.8, purposeTime)
         }
         
-        // 展示中心点
         let postion = CGPoint(x: UIScreen.main.bounds.size.width * 0.5, y: centerY)
         
         guard text.count > 0 else { return }
-        // show
         UIWindow.key?.makeToast(text + "  ",
                                 duration: showDuration,
                                 point: postion,
@@ -102,7 +110,6 @@ extension String {
     
 }
 extension UIImage {
-    /// 创建普通二维码
     class func createQRCode(size: CGFloat, dataStr: String) -> UIImage? {
         let filter = CIFilter(name:"CIQRCodeGenerator")
         filter?.setDefaults()
@@ -114,7 +121,6 @@ extension UIImage {
         return self.createNonInterpolatedUIImage(image: cIImage, size: size)
     }
     
-    /// 根据CIImage生成指定大小的图片
     private class func createNonInterpolatedUIImage(image:CIImage,size:CGFloat) -> UIImage? {
         let extent = image.extent.integral
         let scale = min(size/extent.width, size/extent.height)

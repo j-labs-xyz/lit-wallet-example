@@ -106,32 +106,96 @@
 		BA7EE7A229929ED200D73069 /* LitWallet */ = {
 			isa = PBXGroup;
 			children = (
-				BA7EE7C02992AACB00D73069 /* Constants.swift */,
-				BA7EE7BE2992AACB00D73069 /* Error.swift */,
-				BA7EE7C22992AACB00D73069 /* Extensions.swift */,
-				BA7EE7C32992AACB00D73069 /* logo_gif.gif */,
-				BA7EE7B82992AACA00D73069 /* MintingPKPViewController.swift */,
-				BA7EE7BD2992AACB00D73069 /* SendLoadingView.swift */,
+				BA7EE7B129929ED400D73069 /* Info.plist */,
+				BA819340299636260095EF1D /* LitOAuth */,
+				BA819347299636B40095EF1D /* Resource */,
+				BA8193462996366F0095EF1D /* Common */,
+				BA8193412996363F0095EF1D /* Module */,
+				BA7EE7A329929ED200D73069 /* AppDelegate.swift */,
+			);
+			path = LitWallet;
+			sourceTree = "<group>";
+		};
+		BA819340299636260095EF1D /* LitOAuth */ = {
+			isa = PBXGroup;
+			children = (
 				BA7EE7D52992AB6600D73069 /* LitOAuthClient.swift */,
-				BA7EE7BB2992AACA00D73069 /* SignInViewController.swift */,
-				BA7EE7B72992AACA00D73069 /* SplashViewController.swift */,
-				BA7EE7BF2992AACB00D73069 /* ValueSendView.swift */,
-				BA7EE7BA2992AACA00D73069 /* WalletAddressViewController.swift */,
-				BA7EE7C52992AACB00D73069 /* WalletAddressViewController.xib */,
-				BA7EE7BC2992AACA00D73069 /* WalleteSendViewController.swift */,
-				BA7EE7B92992AACA00D73069 /* WalleteSendViewController.xib */,
+				BA7EE7B82992AACA00D73069 /* MintingPKPViewController.swift */,
+			);
+			path = LitOAuth;
+			sourceTree = "<group>";
+		};
+		BA8193412996363F0095EF1D /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				BA819345299636580095EF1D /* Signin */,
+				BA819344299636500095EF1D /* Send */,
+				BA8193432996364B0095EF1D /* Address */,
+				BA819342299636460095EF1D /* Wallet */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		BA819342299636460095EF1D /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
 				BA7EE7C12992AACB00D73069 /* WalletManager.swift */,
 				BA7EE7C42992AACB00D73069 /* WalletViewController.swift */,
 				BA81933829950BEE0095EF1D /* TracsactionListView.swift */,
 				BA81933A29950D5C0095EF1D /* TransactionTableViewCell.swift */,
 				BA81933B29950D5C0095EF1D /* TransactionTableViewCell.xib */,
-				BA7EE7A329929ED200D73069 /* AppDelegate.swift */,
-				BA7EE7A929929ED200D73069 /* Main.storyboard */,
-				BA7EE7AC29929ED400D73069 /* Assets.xcassets */,
-				BA7EE7AE29929ED400D73069 /* LaunchScreen.storyboard */,
-				BA7EE7B129929ED400D73069 /* Info.plist */,
 			);
-			path = LitWallet;
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		BA8193432996364B0095EF1D /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				BA7EE7BA2992AACA00D73069 /* WalletAddressViewController.swift */,
+				BA7EE7C52992AACB00D73069 /* WalletAddressViewController.xib */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		BA819344299636500095EF1D /* Send */ = {
+			isa = PBXGroup;
+			children = (
+				BA7EE7BC2992AACA00D73069 /* WalleteSendViewController.swift */,
+				BA7EE7B92992AACA00D73069 /* WalleteSendViewController.xib */,
+			);
+			path = Send;
+			sourceTree = "<group>";
+		};
+		BA819345299636580095EF1D /* Signin */ = {
+			isa = PBXGroup;
+			children = (
+				BA7EE7BB2992AACA00D73069 /* SignInViewController.swift */,
+				BA7EE7B72992AACA00D73069 /* SplashViewController.swift */,
+			);
+			path = Signin;
+			sourceTree = "<group>";
+		};
+		BA8193462996366F0095EF1D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BA7EE7BD2992AACB00D73069 /* SendLoadingView.swift */,
+				BA7EE7C02992AACB00D73069 /* Constants.swift */,
+				BA7EE7BE2992AACB00D73069 /* Error.swift */,
+				BA7EE7BF2992AACB00D73069 /* ValueSendView.swift */,
+				BA7EE7C22992AACB00D73069 /* Extensions.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		BA819347299636B40095EF1D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BA7EE7AC29929ED400D73069 /* Assets.xcassets */,
+				BA7EE7C32992AACB00D73069 /* logo_gif.gif */,
+				BA7EE7A929929ED200D73069 /* Main.storyboard */,
+				BA7EE7AE29929ED400D73069 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		ECE2DD1B2622B360BD192B7B /* Frameworks */ = {

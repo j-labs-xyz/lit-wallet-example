@@ -71,16 +71,15 @@ class WalleteSendViewController: UIViewController {
         guard self.isSending == false else {
             return
         }
-        guard let wallet = WalletManager.shared.currentWallet, let value = self.valueInput.text?.toDouble(), value >= 0 && value <= wallet.balance else {
+        guard let wallet = WalletManager.shared.currentWallet, let value = self.valueInput.text?.toDouble(), value >= 0 && value <= wallet.balance, let weiValue = value.toWei else {
            return
         }
         guard let toAddress = self.toAddressInput.text, toAddress.web3.isAddress else {
             return
         }
-        let weiValue: UInt64 = UInt64(value * pow(Double(10), Double(18)))
-        let bigIntValue = BigUInt("\(weiValue)")
+
         self.isSending = true
-        let hexV = bigIntValue?.web3.hexString ?? ""
+        let hexV = weiValue.web3.hexString ?? ""
         WalletManager.shared.send(toAddress: toAddress, value: hexV).done { [weak self] tx in
             guard let self = self else { return }
             self.isSending = false

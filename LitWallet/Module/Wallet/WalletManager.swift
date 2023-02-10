@@ -51,15 +51,14 @@ extension WalletManager {
                             resolver.reject(error)
                         }
                     case .success(let res):
-                        let value = UInt64(res.web3.hexString.web3.noHexPrefix, radix: 16) ?? 0
-                        let left = Double(value) / pow(Double(10), Double(18))
+                        let value = (UInt64(res.web3.hexString.web3.noHexPrefix, radix: 16) ?? 0).toEth
                         print("Value: \(value)")
                         print("Hex: \(res.web3.hexString)")
-                        currentWallet.balance = left
+                        currentWallet.balance = value
                         self.currentWallet = currentWallet
                         self.saveCurWallet()
                         DispatchQueue.main.async {
-                            resolver.fulfill(left)
+                            resolver.fulfill(value)
                         }
                     }
                 }
