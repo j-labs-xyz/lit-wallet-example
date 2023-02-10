@@ -13,7 +13,7 @@ class TransactionListView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     lazy var emptyLabel: UILabel = {
         let label = UILabel()
-        label.text = "No transaction"
+        label.text = "No transactions"
         label.textColor = UIColor.black.withAlphaComponent(0.3)
         label.font = UIFont.systemFont(ofSize: 14)
         return label

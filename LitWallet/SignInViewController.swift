@@ -140,6 +140,7 @@ class SignInViewController: UIViewController {
     var retryCount: Int = 0
 
     func getSignature() {
+        
         let authNeededCallback: AuthNeededCallback = { [weak self]chain, resources, switchChain, expiration, url in
             guard let self = self else {
                 return Promise(error: LitError.clientDeinit)

@@ -185,12 +185,20 @@ class WalletViewController: UIViewController {
         self.receiveButton.addTarget(self, action: #selector(clickReceive), for: .touchUpInside)
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage(named: "logout")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action:  #selector(logout)), UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)]
+        self.refreshData()
     }
+
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.retriveBalance()
-        self.transactionListView.address = WalletManager.shared.currentWallet?.address.lowercased()
+    func refreshData() {
+        if self.isViewLoaded && self.view.window != nil {
+            self.retriveBalance()
+            self.transactionListView.address = WalletManager.shared.currentWallet?.address.lowercased()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            guard let self = self else { return }
+            self.refreshData()
+        }
     }
     
     func updateUI() {

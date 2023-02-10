@@ -23,16 +23,13 @@ class WalletManager {
             if let _ = currentWallet {
                 self.saveCurWallet()
             }
-            self.litClient.updateAuth(self.currentWallet?.sessionSigs ?? [:])
         }
     }
     
     init() {
         initWallet()
-        let _ = self.litClient.connect().done { [weak self] in
-            guard let self = self else { return }
+        let _ = self.litClient.connect().done {
             print("Lit connected!")
-            self.litClient.updateAuth(self.currentWallet?.sessionSigs ?? [:])
         }
     }
     
