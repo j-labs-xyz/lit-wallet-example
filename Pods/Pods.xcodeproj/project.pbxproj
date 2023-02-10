@@ -921,7 +921,7 @@
 		C75EE21D0574B1715A24A4B6968F5C10 /* UIRefreshControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B4B612314457AB65393E0D53FD9FEB /* UIRefreshControlExtensions.swift */; };
 		C7CA55DCEB7CBA9C95F9254D7F7C11A6 /* UIView+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E516EE1CA64C415A5CA2CA7391FD417 /* UIView+AnyPromise.m */; };
 		C7FC862AD32C2D113467F478DF845D45 /* field.h in Headers */ = {isa = PBXBuildFile; fileRef = C6E253D2B75E6EA7AF9788F6A6E5AD33 /* field.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		C80E6A729D4A289850B7EFF27521998D /* GoogleSignIn-GoogleSignIn in Resources */ = {isa = PBXBuildFile; fileRef = E5BA41B7F2E1FE47F9ABCAC27C9E4281 /* GoogleSignIn-GoogleSignIn */; };
+		C80E6A729D4A289850B7EFF27521998D /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E5BA41B7F2E1FE47F9ABCAC27C9E4281 /* GoogleSignIn.bundle */; };
 		C8976FBA6C401ACD821CC8008118D275 /* OIDIDToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 838C7365CD363D51A1570820F7498EFD /* OIDIDToken.m */; };
 		C89CA7DADD098F67DBAFAFFA779CE19E /* secp256k1_ecdh.h in Headers */ = {isa = PBXBuildFile; fileRef = 1821A5D724C0DE2138B43535A7CB78FC /* secp256k1_ecdh.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8F07AEFCB40E6A4831AA9425026E85A /* ecmult_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = BCF24369F7AB3F3F7116C5AE78AD9D52 /* ecmult_impl.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -2603,7 +2603,7 @@
 		E5193EAB8368A1C604AE368BDE35E5BA /* Pods-LitWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LitWallet.release.xcconfig"; sourceTree = "<group>"; };
 		E53B8883EBB361354227BF44CDAF1E66 /* scratch_impl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = scratch_impl.h; path = secp256k1/Classes/secp256k1/src/scratch_impl.h; sourceTree = "<group>"; };
 		E5824806643122D1708F31CEC632A306 /* FLAnimatedImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FLAnimatedImage-dummy.m"; sourceTree = "<group>"; };
-		E5BA41B7F2E1FE47F9ABCAC27C9E4281 /* GoogleSignIn-GoogleSignIn */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "GoogleSignIn-GoogleSignIn"; path = GoogleSignIn.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5BA41B7F2E1FE47F9ABCAC27C9E4281 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleSignIn.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5C528605CA0B93A4A59D3BBF54CADB2 /* CAShapeLayer+JKUIBezierPath.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CAShapeLayer+JKUIBezierPath.m"; path = "JKCategories/QuartzCore/CAShapeLayer/CAShapeLayer+JKUIBezierPath.m"; sourceTree = "<group>"; };
 		E6008C96A0D68AA985AD8BF4A6CD39AA /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		E62FD5F95B8B26A543F21C10C1A5BAC9 /* GIDAppAuthFetcherAuthorizationWithEMMSupport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GIDAppAuthFetcherAuthorizationWithEMMSupport.h; path = GoogleSignIn/Sources/GIDAppAuthFetcherAuthorizationWithEMMSupport.h; sourceTree = "<group>"; };
@@ -4184,7 +4184,7 @@
 				FAA5F2D71B90788C908800A94534AA92 /* FLAnimatedImage */,
 				F629CE6C9A9092A215DE9415EA54DF90 /* GenericJSON */,
 				FD56AB51475BC5F592781EE2692D1412 /* GoogleSignIn */,
-				E5BA41B7F2E1FE47F9ABCAC27C9E4281 /* GoogleSignIn-GoogleSignIn */,
+				E5BA41B7F2E1FE47F9ABCAC27C9E4281 /* GoogleSignIn.bundle */,
 				6FD122EA0AB9AB2A8FFA5F676C795DF0 /* GTMAppAuth */,
 				C1998E0D8085221AD87F89B614C10E52 /* GTMSessionFetcher */,
 				CD54121DDA84872534168702B5F92950 /* HandyJSON */,
@@ -6217,7 +6217,7 @@
 			);
 			name = "GoogleSignIn-GoogleSignIn";
 			productName = GoogleSignIn;
-			productReference = E5BA41B7F2E1FE47F9ABCAC27C9E4281 /* GoogleSignIn-GoogleSignIn */;
+			productReference = E5BA41B7F2E1FE47F9ABCAC27C9E4281 /* GoogleSignIn.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		7F18A768FDF4947B6325776051521D6D /* GenericJSON */ = {
@@ -6530,7 +6530,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C80E6A729D4A289850B7EFF27521998D /* GoogleSignIn-GoogleSignIn in Resources */,
+				C80E6A729D4A289850B7EFF27521998D /* GoogleSignIn.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8394,6 +8394,7 @@
 			baseConfigurationReference = DFE70B97B6D932C419FBFA1A31523039 /* GoogleSignIn.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/GoogleSignIn";
+				DEVELOPMENT_TEAM = 296FCFG93V;
 				IBSC_MODULE = GoogleSignIn;
 				INFOPLIST_FILE = "Target Support Files/GoogleSignIn/ResourceBundle-GoogleSignIn-GoogleSignIn-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -9306,6 +9307,7 @@
 			baseConfigurationReference = 0CB2753DDE762A281FC408A1B49A6D6A /* GoogleSignIn.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/GoogleSignIn";
+				DEVELOPMENT_TEAM = 296FCFG93V;
 				IBSC_MODULE = GoogleSignIn;
 				INFOPLIST_FILE = "Target Support Files/GoogleSignIn/ResourceBundle-GoogleSignIn-GoogleSignIn-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
