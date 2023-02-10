@@ -217,7 +217,7 @@ DEPENDENCIES:
   - JKCategories
   - KeychainSwift
   - Kingfisher (= 6.3.1)
-  - "Lit_swift (from `git@github.com:j-labs-xyz/lit-swift-sdk.git`, commit `975376333efec4c279ab834abf44b22314fdbe33`)"
+  - "Lit_swift (from `git@github.com:j-labs-xyz/lit-swift-sdk.git`)"
   - SnapKit (~> 5.6.0)
   - SwifterSwift
   - Toast-Swift (~> 5.0.1)
@@ -248,12 +248,11 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Lit_swift:
-    :commit: 975376333efec4c279ab834abf44b22314fdbe33
     :git: "git@github.com:j-labs-xyz/lit-swift-sdk.git"
 
 CHECKOUT OPTIONS:
   Lit_swift:
-    :commit: 975376333efec4c279ab834abf44b22314fdbe33
+    :commit: 5ac48dd52e8345a178bccfb5e23da2475e99d635
     :git: "git@github.com:j-labs-xyz/lit-swift-sdk.git"
 
 SPEC CHECKSUMS:
@@ -280,6 +279,6 @@ SPEC CHECKSUMS:
   TweetNacl: 3abf4d1d2082b0114e7a67410e300892448951e6
   web3-jlabs.swift: 1279670a26e8677279c76de8483c7987f66bb064
 
-PODFILE CHECKSUM: e6495defc26be16e5cb8b5edbdb9d9683560da11
+PODFILE CHECKSUM: 75dc6355d7e502b2eae41a89eeb70a4aefd77d48
 
 COCOAPODS: 1.11.3
