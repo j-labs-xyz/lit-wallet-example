@@ -57,6 +57,11 @@ class WalleteSendViewController: UIViewController {
             let vc = SFSafariViewController(url: URL(string: "https://mumbai.polygonscan.com/tx/\(self.transactionIdLabel.text ?? "")")!)
             self.present(vc, animated: true)
         }
+        
+        self.view.addTap { [weak self] in
+            guard let self = self else { return }
+            self.view.endEditing(true)
+        }
     }
     
     @objc func didClickAddressPaste() {
