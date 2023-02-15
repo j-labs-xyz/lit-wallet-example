@@ -8,7 +8,7 @@ target 'LitWallet' do
   # Pods for LitWallet
 	
 	
-  pod 'Lit_swift', :git => "git@github.com:j-labs-xyz/lit-swift-sdk.git", :commit => "5ac48dd52e8345a178bccfb5e23da2475e99d635"
+  pod 'Lit_swift', :git => "git@github.com:j-labs-xyz/lit-swift-sdk.git", :branch => 'dev'
 #  pod 'Lit_swift', :path => "../../Modules/Lit_swift"
 
   pod 'SnapKit', '~> 5.6.0'
