@@ -46,7 +46,7 @@ extension UIWindow {
         return UIApplication.shared.keyWindow
     }
     
-    static func toast(msg: String, maxLength: Int = 200, placeholder: String? = "", duration: Double? = 1.3, centerY: CGFloat = UIScreen.main.bounds.size.height * 0.3) {
+    static func toast(msg: String, maxLength: Int = 200, placeholder: String? = "", duration: Double? = 3, centerY: CGFloat = UIScreen.main.bounds.size.height * 0.3) {
         
         var text: String = msg.count > maxLength ? "\(msg.prefix(maxLength))" : msg
         

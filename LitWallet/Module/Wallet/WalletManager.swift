@@ -31,6 +31,7 @@ class WalletManager {
         let _ = self.litClient.connect().done {
             print("Lit connected!")
         }
+//        LitSwift.enableLog = true
     }
     
     func initWallet() {

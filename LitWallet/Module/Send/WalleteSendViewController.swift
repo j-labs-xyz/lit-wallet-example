@@ -12,6 +12,7 @@ import JKCategories
 import WebKit
 import SafariServices
 import BigInt
+import PromiseKit
 class WalleteSendViewController: UIViewController {
 
     @IBOutlet weak var transactionIdLabel: UILabel!
@@ -84,7 +85,7 @@ class WalleteSendViewController: UIViewController {
         }
 
         self.isSending = true
-        let hexV = weiValue.web3.hexString ?? ""
+        let hexV = weiValue.web3.hexString
         WalletManager.shared.send(toAddress: toAddress, value: hexV).done { [weak self] tx in
             guard let self = self else { return }
             self.isSending = false
@@ -93,7 +94,7 @@ class WalleteSendViewController: UIViewController {
             guard let self = self else { return }
             print(err)
             self.isSending = false
-            UIWindow.toast(msg: err.localizedDescription)
+            UIWindow.toast(msg: (err as? PMKHTTPError)?.failureReason ?? err.localizedDescription)
         }
     }
 
