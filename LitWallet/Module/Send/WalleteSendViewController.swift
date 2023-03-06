@@ -13,6 +13,7 @@ import WebKit
 import SafariServices
 import BigInt
 import PromiseKit
+import litSwift
 class WalleteSendViewController: UIViewController {
 
     @IBOutlet weak var transactionIdLabel: UILabel!
@@ -94,7 +95,12 @@ class WalleteSendViewController: UIViewController {
             guard let self = self else { return }
             print(err)
             self.isSending = false
-            UIWindow.toast(msg: (err as? PMKHTTPError)?.failureReason ?? err.localizedDescription)
+            if let errorMsg = (err as? PMKHTTPError)?.failureReason, (errorMsg as NSString).contains("Exceeded the daily limit") {
+                UIWindow.toast(msg: "Exceeded the daily limit: \(LitActionConfig.default.maxEthValue ?? 0)")
+            } else {
+                UIWindow.toast(msg: err.localizedDescription)
+
+            }
         }
     }
 

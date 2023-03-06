@@ -20,5 +20,7 @@
 	</dict>
 	<key>RELAY_SERVER</key>
 	<string>https://lit-relay-server.api.3wlabs.xyz:3001/</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>
