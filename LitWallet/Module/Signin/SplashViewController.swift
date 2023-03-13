@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 import SnapKit
 import FLAnimatedImage
+import GoogleSignIn
+
 class SplashViewController: UIViewController {
     
     lazy var logoImageView: FLAnimatedImageView = {
@@ -19,7 +21,7 @@ class SplashViewController: UIViewController {
         }
         return logo
     }()
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .black
@@ -28,17 +30,18 @@ class SplashViewController: UIViewController {
             make.center.equalToSuperview()
             make.size.equalTo(150)
         }
-        logoImageView.loopCompletionBlock = { [weak self] _ in
+        
+        logoImageView.startAnimating()
+  
+        WalletManager.shared.initCurrentWallet { [weak self]  in
             guard let `self` = self else { return }
             self.gotoHomeVC()
-            
         }
-        logoImageView.startAnimating()
     }
-    var needRefresh: Bool = false
+    
     func gotoHomeVC() {
-        if let window =  (UIApplication.shared.delegate as? AppDelegate)?.window {
-            if needRefresh || WalletManager.shared.currentWallet == nil {
+        if let window = (UIApplication.shared.delegate as? AppDelegate)?.window {
+            if WalletManager.shared.currentWallet == nil {
                 window.rootViewController = SignInViewController()
             } else if let wallet = WalletManager.shared.currentWallet {
                 let vc = WalletViewController(wallet: wallet)

@@ -7,6 +7,7 @@
 
 import UIKit
 import GoogleSignIn
+import GoogleAPIClientForREST
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -20,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = SplashViewController()
         window?.makeKeyAndVisible()
         window?.backgroundColor = .darkGray
+        
         return true
     }
     

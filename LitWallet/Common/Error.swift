@@ -9,4 +9,6 @@ import Foundation
 
 public enum WalletError: Error {
     case empty_relay_server
+    case empty_drive_wallet
+    case failed_save_drive
 }

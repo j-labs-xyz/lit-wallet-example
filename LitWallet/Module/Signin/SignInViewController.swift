@@ -12,6 +12,7 @@ import FLAnimatedImage
 import GoogleSignIn
 import litSwift
 import PromiseKit
+import GoogleAPIClientForREST
 class SignInViewController: UIViewController {
 
     lazy var googleLogo: UIImageView = {
@@ -35,7 +36,6 @@ class SignInViewController: UIViewController {
         
     }()
     lazy var siginButton = UIButton(type: .custom)
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,32 +99,41 @@ class SignInViewController: UIViewController {
     func gotoSignin() {
         self.infoLabel.text = "Signing in with Google OAuth..."
         self.siginButton.isHidden = true
-        GIDSignIn.sharedInstance.signIn(withPresenting: self) { [weak self] res, err in
+        GIDSignIn.sharedInstance.signIn(withPresenting: self, hint: nil, additionalScopes: [kGTLRAuthScopeDriveFile]) { [weak self] res, err in
             guard let `self` = self else { return }
-            if let profile = res?.user.profile, let tokenString = res?.user.idToken?.tokenString {
+            if let profile = res?.user.profile,
+                let tokenString = res?.user.idToken?.tokenString,
+               let authorizer = res?.user.fetcherAuthorizer {
                 print(tokenString)
+                
                 self.tokenString = tokenString
-                if let wallet = WalletManager.shared.loadWallet(by: profile.email) {
-                    self.infoLabel.text = "Loading the existing Lit PKP..."
-                    self.wallet = wallet
-                    self.didMintPKP(pkpEthAddress: self.wallet.address, pkpPublicKey: self.wallet.publicKey, profile: profile)
-                } else {
-                    self.infoLabel.text = "Starting to mint a new Lit PKP..."
-                    let userInfo = UserInfo()
-                    userInfo.avatar = profile.imageURL(withDimension: 300)?.absoluteString
-                    userInfo.name = profile.name
-                    userInfo.email = profile.email
-                    self.wallet.userInfo = userInfo
-    
-                    let vc = try! MintingPKPViewController(googleTokenString: tokenString) { pkpEthAddress, pkpPublicKey, errorString in
-                        if let pkpEthAddress = pkpEthAddress, let pkpPublicKey = pkpPublicKey {
-                            self.didMintPKP(pkpEthAddress: pkpEthAddress, pkpPublicKey: pkpPublicKey, profile: profile)
-                        } else {
-                            self.siginButton.isHidden = false
+
+                WalletManager.shared.driveService.authorizer = authorizer
+                WalletManager.shared.loadWallet(profile.email) { wallet, error in
+                    if let error = error {
+                        UIWindow.toast(msg: error.localizedDescription)
+                    } else if let wallet = wallet {
+                        self.infoLabel.text = "Loading the existing Lit PKP..."
+                        self.wallet = wallet
+                        self.didMintPKP(pkpEthAddress: self.wallet.address, pkpPublicKey: self.wallet.publicKey, profile: profile)
+                    } else {
+                        self.infoLabel.text = "Starting to mint a new Lit PKP..."
+                        let userInfo = UserInfo()
+                        userInfo.avatar = profile.imageURL(withDimension: 300)?.absoluteString
+                        userInfo.name = profile.name
+                        userInfo.email = profile.email
+                        self.wallet.userInfo = userInfo
+
+                        let vc = try! MintingPKPViewController(googleTokenString: tokenString) { pkpEthAddress, pkpPublicKey, errorString in
+                            if let pkpEthAddress = pkpEthAddress, let pkpPublicKey = pkpPublicKey {
+                                self.didMintPKP(pkpEthAddress: pkpEthAddress, pkpPublicKey: pkpPublicKey, profile: profile)
+                            } else {
+                                self.siginButton.isHidden = false
+                            }
                         }
+                        vc.isModalInPresentation = true
+                        self.present(vc, animated: true)
                     }
-                    vc.isModalInPresentation = true
-                    self.present(vc, animated: true)
                 }
                 
             } else {
@@ -132,7 +141,7 @@ class SignInViewController: UIViewController {
             }
         }
     }
-    
+
     var litClient: LitClient {
         return WalletManager.shared.litClient
     }
@@ -238,6 +247,9 @@ class SignInViewController: UIViewController {
     func gotoWallet() {
         WalletManager.shared.currentWallet = self.wallet
         let vc = WalletViewController(wallet: self.wallet)
+        WalletManager.shared.saveWallet(self.wallet) { file, error in
+            
+        }
         if let window =  (UIApplication.shared.delegate as? AppDelegate)?.window {
             window.rootViewController = UINavigationController(rootViewController: vc)
         }
