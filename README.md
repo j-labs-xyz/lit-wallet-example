@@ -22,8 +22,11 @@ pod install
 The work has been done and published on GitHub
 
 https://github.com/j-labs-xyz/lit-swift-sdk
+
 https://github.com/j-labs-xyz/lit-wallet-example
+
 https://github.com/j-labs-xyz/relay-server
 
 Demo
+
 https://www.youtube.com/watch?v=eb_OUfNc7i8
